@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+p {
+	font-size: 14px;
+	margin: 0em;
+}
+
+a {
+	text-decoration: none;
+}
+
+.list {
+	margin-right: 50px;
+	margin-left: 50px;
+	padding: 8px 10px 8px 10px;
+	font-size: 15px;
+}
+
+h4 {
+	margin: 0em;
+}
+
+body {
+	margin: 0em;
+	padding: 80px 0 100px 0;
+	background-image: url('../picture/cafe.jpg');
+	height: 550px;
+	background-size: cover;
+}
+
+header {
+	height: 65px;
+	width: 100%;
+	background-color: rgba(27, 33, 34, 0.9);
+	position: fixed;
+	top: 0;
+	z-index: 10;
+}
+
+.nissho {
+	width: 100px;
+	height: 50px;
+	border-radius: 3px;
+	position: absolute;
+	left: 12px;
+	bottom: 8px;
+}
+
+.header-right {
+	float: right;
+}
+
+.header-right a {
+	line-height: 65px;
+	padding: 0 25px;
+	color: white;
+	display: block;
+	float: left;
+	position: relative;
+	bottom: 15px;
+	left: 250px;
+	transition: all 0.5s;
+}
+
+.header-right a:hover {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+.container {
+	max-width: 1000px;
+	width: 100%;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+.content {
+	/* background-color: rgb(105, 213, 228);*/
+	background-color: #fff;
+	width: 1200px;
+	font-size: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	border: 1px solid #d1d1d1;
+	padding: 30px;
+	border-radius: 20px;
+	opacity: 0.96;
+}
+
+.inline-block {
+	text-align: center;
+}
+
+button {
+	display: inline-block;
+	width: 85%;
+	background-color: #2096f3;
+	color: #fff;
+	padding: 60px;
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+	border: 0;
+	border-radius: 10px;
+	opacity: 0.9;
+}
+
+button:hover {
+	opacity: 1;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}
+
+.error-message {
+	font-size: 12px;
+	color: #ff7676;
+	display: none; /* 髱櫁｡ｨ遉ｺ縺ｫ */
+}
+
+.test {
+	font-size: 20pt;
+	margin-right: auto;
+}
+
+/* :invalid譎ゅ□縺鷹團縺ｮ隕∫ｴ�繧定｡ｨ遉ｺ */
+input:invalid+.error-message {
+	display: block;
+}

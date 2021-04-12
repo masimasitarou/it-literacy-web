@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<title>ログインページ</title>
+<link rel="stylesheet" type="text/css" href="../CSS/takakubo.css">
+<script src="../JavaScript/login.js"></script>
+
+
+</head>
+
+<body>
+	<form class="content" action="menu.html" method="GET" name="mail_form">
+
+		<p>
+			ログインID(メールアドレス):<input type="email" id="id" placeholder="メールアドレスを入力">
+		</p>
+		<div class="errorAll" id="error1"></div>
+
+		<p>
+			パスワード:<input type="password" name="pass" placeholder="パスワードを入力">
+		</p>
+		<div class="errorAll" id="error2"></div>
+
+		<a href="home.html" th:href="@{/home}"><button type="button"
+				onclick="checkForm();">ログイン</button></a> <a
+			href="location.href='account_registration.html"
+			th:href="@{/account_registration}"><button type="button"
+				onclick="location.href='account_registration.html'">アカウント作成</button></a>
+	</form>
+</body>
+
+</html>

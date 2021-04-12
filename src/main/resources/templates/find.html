@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<script type="text/javascript">
+	var tag_num = 2;
+	function Add() {
+		var oTag = document.createElement("input");
+		oTag.setAttribute("type", "url");
+		oTag.setAttribute("size", "60");
+		oTag.setAttribute("name", "URL" + tag_num);
+		oTag.setAttribute("placeholder", "URL" + tag_num);
+		tag_num++
+		var oDiv = document.getElementById("area");
+		oDiv.appendChild(oTag);
+	}
+</script>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>find page</title>
+<link rel="stylesheet" th:href="@{/CSS/find.css}" type="text/css">
+<meta name="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset%-DUTF-8" />
+<style>
+h1
+
+ 
+
+(
+
+ 
+
+font-size
+
+
+:
+
+
+15pt
+
+
+;
+font-weight
+
+
+:bold
+
+
+;
+color
+
+
+:gray
+
+
+;
+}
+body
+
+ 
+
+(
+
+ 
+
+font-size
+
+
+:
+
+
+10pt
+
+
+;
+color
+
+
+:gray
+
+
+;
+margin
+
+
+:
+
+
+5px
+
+ 
+
+25px
+
+
+;
+}
+tr
+
+ 
+
+(
+
+ 
+
+margin
+
+
+:
+
+
+5px
+
+
+;
+}
+th
+
+ 
+
+(
+
+ 
+
+padding
+
+
+:
+
+
+5px
+
+
+;
+color
+
+
+:white
+
+
+;
+background
+
+
+:darkgray
+
+
+;
+}
+td
+
+ 
+
+(
+
+ 
+
+padding
+
+
+:
+
+
+5px
+
+
+;
+color
+
+
+:black
+
+
+;
+background
+
+
+:
+
+
+#f0f0f0
+
+
+;
+}
+</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="header-left">
+				<a href="https://natic.nissho-ele.co.jp/"><img class="nissho"
+					src="../picture/natic_vi_600_400.png"></a>
+			</div>
+			<div class="header-right">
+				<a th:href="@{/}">登録</a> <a th:href="@{/find}">リスト</a> <a
+					href="home.html" th:href="@{/home}">ホーム</a> <a th:href="@{/login}">ログアウト</a>
+			</div>
+		</div>
+	</header>
+
+	<div class="content">
+		<h1 th:text="${title}">find page</h1>
+		<p th:text="${msg}"></p>
+		<table>
+			<form action="/find" method="post">
+				<tr>
+					<td>FIND:</td>
+					<td><input type="text" name="fstr" size="20"
+						th:value="${value}" /></td>
+				</tr>
+				<tr>
+					<td><button type="submit">検索</button></td>
+					<td></td>
+				</tr>
+			</form>
+		</table>
+		<hr />
+		<table class="test">
+			<tr>
+				<th class="list">ID</th>
+				<th class="list">Title</th>
+				<th class="list">Memo</th>
+			</tr>
+			<tr class="list" th:each="obj : ${datalist}">
+				<td class="list" th:text="${obj.id}"></td>
+				<td class="list" th:text="${obj.title}"></td>
+				<td class="list" th:text="${obj.memo}"></td>
+				<td>
+					<form action="http://localhost:8080/post_test" method="post">
+						<!-- <input  type="text" name = "titleID" th:text="${obj.id}"/> -->
+						<button type="submit" th:value="${obj.id}" name="titleID">URL</button>
+					</form>
+				</td>
+				<td>
+					<form action="http://localhost:8080/postId" method="post">
+						<!-- <input  type="text" name = "titleID" th:text="${obj.id}"/> -->
+						<button type="submit" th:value="${obj.id}" name="titleID">Edit</button>
+					</form>
+				</td>
+				<td>
+					<form action="http://localhost:8080/postIdForDelete" method="post">
+						<!-- <input  type="text" name = "titleID" th:text="${obj.id}"/> -->
+						<button type="submit" th:value="${obj.id}" name="titleID">Delete</button>
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

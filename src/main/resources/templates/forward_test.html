@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<script type="text/javascript">
+    var tag_num = 2;
+    function Add(){
+    var oTag = document.createElement("input");
+    oTag.setAttribute("type", "url");
+    oTag.setAttribute("size", "60");
+    oTag.setAttribute("name", "URL" + tag_num);
+    oTag.setAttribute("placeholder", "URL" + tag_num);
+    tag_num++
+    var oDiv = document.getElementById("area");
+    oDiv.appendChild(oTag);
+    }
+</script>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find page</title>
+    <link rel="stylesheet" href="../CSS/find.css">
+    <meta name="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset%-DUTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset%-DUTF-8" />
+<style>
+h1
+ 
+(
+ 
+font-size
+:
+18pt
+;
+ 
+font-weight
+:bold
+;
+ 
+color
+:gray
+;
+ 
+}
+body
+ 
+(
+ 
+font-size
+:
+13pt
+;
+ 
+color
+:gray
+;
+ 
+margin
+:
+5px
+ 
+25px
+;
+ 
+}
+tr
+ 
+(
+ 
+margin
+:
+5px
+;
+ 
+}
+th
+ 
+(
+ 
+padding
+:
+5px
+;
+ 
+color
+:white
+;
+ 
+background
+:darkgray
+;
+ 
+}
+td
+ 
+(
+ 
+padding
+:
+5px
+;
+ 
+color
+:black
+;
+ 
+background
+:
+#f0f0f0
+;
+ 
+}
+</style>
+</head>
+<body>
+	<header>
+        <div class="container">
+          <div class="header-left">
+            <a href="https://natic.nissho-ele.co.jp/"><img class="nissho" src="../picture/natic_vi_600_400.png"></a>
+          </div>
+          <div class="header-right">
+            <a th:href="@{/}">登録</a>
+            <a th:href="@{/find}">リスト</a>
+            <a href="home.html" th:href="@{/home}">ホーム</a>
+            <a th:href="@{/login}">ログアウト</a>
+          </div>
+        </div>
+      </header>
+      
+<div class="content">
+	<table>
+		<form>
+			<tr>
+				<td><Label for="ID">ID</label></td>
+				<td type="hidden" name="ID" th:text="${ID}"/></td>
+			</tr>
+			<tr>
+				<td><Label for="name">タイトル</label></td>
+				<td name="title"  th:text="${title}"/></td>
+			</tr>
+			<tr>
+				<td><Label for="memo">メモ</label></td>
+				<td name="memo" th:text="${memo}"></td>
+			</tr>
+			<tr>
+				<td><Label for="url1">URL1</label></td>
+				<td name="url1"  th:text="${url1}"></td>
+			</tr>
+			<tr>
+				<td><Label for="url2">URL2</label></td>
+				<td name="url2"  th:text="${url2}"></td>
+			</tr>
+			<tr>
+				<td><Label for="url3">URL3</label></td>
+				<td name="url3"  th:text="${url3}"></td>
+			</tr>
+			
+		</form>
+	</table>
+	<hr />
+	<table>
+		<form>
+			<tr>
+				<td><input type="button" onclick="location.href='/find'" value="戻る"></td>
+			</tr>
+		</form>
+	</table>
+	</div>
+</body>
+</html>

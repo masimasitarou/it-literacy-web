@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+
+<script type="text/javascript">
+	var tag_num = 2;
+	function Add() {
+		var oTag = document.createElement("input");
+		oTag.setAttribute("type", "url");
+		oTag.setAttribute("size", "60");
+		oTag.setAttribute("name", "URL" + tag_num);
+		oTag.setAttribute("placeholder", "URL" + tag_num);
+		tag_num++
+		var oDiv = document.getElementById("area");
+		oDiv.appendChild(oTag);
+	}
+</script>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>登録ブックマーク/〇〇〇</title>
+<!-- タスク：タイトル名を表示させる？-->
+<link rel="stylesheet" href="../css/bookmark.css">
+<meta name="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+h1 {
+	font-size: 18pt;
+	font-weight: bold;
+	color: gray;
+}
+
+body {
+	font-size: 13pt;
+	color: gray;
+	margin: 5px 25px;
+}
+
+tr {
+	margin: 5px;
+}
+
+th {
+	padding: 5px;
+	color: white;
+	background: darkgray;
+}
+
+td {
+	padding: 5px;
+	color: black;
+	background: #f0f0f0;
+}
+
+.err {
+	color: red;
+}
+</style>
+</head>
+<body>
+
+	<header>
+		<div class="container">
+			<div class="header-left">
+				<a href="https://natic.nissho-ele.co.jp/"><img class="nissho"
+					src="../picture/natic_vi_600_400.png"></a>
+			</div>
+			<div class="header-right">
+				<a th:href="@{/}">登録</a> <a th:href="@{/find}">リスト</a> <a
+					href="home.html" th:href="@{/home}">ホーム</a> <a th:href="@{/login}">ログアウト</a>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<form class="content" method="post" action="/">
+			<h4>登録ブックマーク</h4>
+			<table border="0">
+				<tr>
+					<td width=400px rowspan="2" valign="top"><br>
+					<p>
+							タイトル:<br>
+							<input type="text" name="title" size="30"
+								style="font-size: 150%; background-color: #ECECEC";>
+						</p></td>
+					<td width=230px align="center"><img src="../picture/cafe.jpg"></td>
+					<!--タスク：ユーザの登録画像を引っ張ってくる -->
+					<td width=500px align="center" valign="center"><button
+							class="btn" type="submit"
+							style="font-size: 30px; background-color: orange;">&nbsp;&nbsp;登録！&nbsp;&nbsp;</button></td>
+				</tr>
+				<!--タスク：tabボタン押下時のフォーカスの流れを整える -->
+				<tr>
+					<td height=55px valign="top">
+						<div></div> <!-- <input type="text" size="15" required placeholder="作者名とか入れる">
+              <div class="error-message">入力必須です</div> --> <!--タスク：新規登録かつログイン状態の場合はログインユーザ名を自動入力？ -->
+					</td>
+					<td rowspan="2" valign="top"><br>
+					<p>メモ:</p> <textarea name="memo" cols="60" rows="20"
+							placeholder="記入事項
+・何の案件(何の作業)に使った情報か←日付必須
+・この情報で何ができたか(得られたもの)
+・その他"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" valign="top"><span id="area">
+							<p>
+								URL:<br>
+								<!-- <input type="url" name="URL1" size="60" placeholder="URL1"> -->
+								<textarea name="url1" cols="50" rows="1"></textarea>
+								<textarea name="url2" cols="50" rows="1"></textarea>
+								<textarea name="url3" cols="50" rows="1"></textarea>
+								<!--&nbsp;<button class="btn" type="submit" onclick="Add()">&nbsp;&nbsp;+&nbsp;&nbsp;</button>-->
+							</p>
+					</span>
+					<!--  タスク：行削除のボタンも追加する？ --> <!--タスク：URLのコピーボタンがあると良いかも --></td>
+				</tr>
+				<tr>
+					<td colspan="3" align="right">
+						<p style="color: #797979;">最終更新:yyyy/mm/dd</p>
+					</td>
+					<!--タスク：最終更新の日時を表示する？ -->
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

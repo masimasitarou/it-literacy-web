@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+
+<head>
+<meta charset="utf-8">
+<title>TAKAKUBO WEB</title>
+<link rel="stylesheet" href="../css/home.css">
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<div class="header-left">
+				<a href="https://www.nissho-ele.co.jp/index.html"><img
+					class="nissho" src="../picture/ogp_logo.png"></a>
+			</div>
+			<div class="header-right">
+				<a th:href="@{/}">登録</a> <a th:href="@{/find}">リスト</a> <a
+					href="home.html" th:href="@{/home}">ホーム</a> <a th:href="@{/login}">ログアウト</a>
+			</div>
+		</div>
+	</header>
+	<div class="top-wrapper">
+		<div class="container">
+			<div class="name"></div>
+			<h1>HELLO User!</h1>
+			<h1>WELCOME TO TAKAKUBO WEB!</h1>
+			<div class="comment">
+				<p>これからTAKAKUBO WEBを作り上げるのは貴方たちです。</p>
+				<p>TAKAKUBO WEBを一緒に盛り上げていきましょう！</p>
+			</div>
+			<div class="btn-wrapper">
+				<a href="menu.html" class="btn bookMark">ブックマークはこちら</a><br>
+				<div class="name"></div>
+				<a href="#" class="btn content1">コンテンツ１</a> <a href="#"
+					class="btn content2">コンテンツ2</a>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+
+	<footer>
+		<p class="foot">by TAKAKUBO WEB</p>
+	</footer>
+</body>
+
+</html>
